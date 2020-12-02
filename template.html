@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app" v-on:mousemove="mouseMove">
+    <h1> {{ title }} </h1>
+    <h1> {{ title }} instance</h1>
+    <p> {{ welcome() }} </p>
+    <div v-html="htmlTag"></div>
+    <p> Sum: {{ counter }} </p>
+    <button v-on:click="sum"> +1 </button>
+    <p> Sum by 5: {{ counterBy }} </p>
+    <button v-on:click="sumBy(5, $event)"> +5 </button>
+    <p>Mouse: {{ x }} & {{ y }} </p>
+    <p v-on:mousemove="stopMouseMove">Stop mouse move by function</p>
+    <p v-on:mousemove.stop>Stop mouse move by event handling</p>
+    <a v-on:click href="https://google.com">Google link</a>
+    <br>
+    <a v-on:click.prevent href="https://google.com">Google link (with prevent)</a>
+    <p>Alert when press Enter: </p>
+    <input type="text" v-on:keyup.enter="keyupAlert()">
+    <hr>
+    <a href="template">Template</a>
+    <a v-bind:href="ex1">Ex1</a>
+    <a v-bind:href="ex2">Ex2</a>
+</div>
+
+<script src="app.js"></script>

@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!-- 1) Exiba um alert quando o botão for clicado -->
+    <div>
+        <button v-on:click="alertClick()">Show alert</button>
+    </div>
+
+    <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
+        data (dica: event.target.value) -->
+    <div>
+        <p>Copy</p>
+        <input type="text" v-on:keyup="getKeyValue">
+        <p>{{ value }}</p>
+    </div>
+
+    <!-- 3) Ajuste o exemplo 2 para disparar o evento "keydown" somente
+        quando a tecla for ENTER -->
+    <div>
+        <p>Copy when press Enter</p>
+        <input type="text" v-on:keydown.enter="value2 = $event.target.value">
+        <p>{{ value2 }}</p>
+    </div>
+    <hr>
+    <a v-bind:href="template">Template</a>
+    <a v-bind:href="ex1">Ex1</a>
+    <a v-bind:href="ex2">Ex2</a>
+</div>
+<script src="app.js"></script>
