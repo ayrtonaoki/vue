@@ -8,6 +8,8 @@ new Vue({
         counterBy: 0,
         x: 0,
         y: 0,
+        twoWayBindExample: "Two way data bind example",
+        twoWayBindExample2: "Two way data bind example with v-model",
         // ex1
         ex1: './ex1.html',
         name: 'Ayrton',
@@ -16,10 +18,27 @@ new Vue({
         // ex2
         ex2: './ex2.html',
         value: '',
-        value2: ''
+        value2: '',
+        computeCounter: 0,
+        computeCounter2: 0,
+        // ex3
+        ex3: './ex3.html'
+    },
+    computed: {
+        resultComputeCounter() {
+            return this.computeCounter >= 5 ? 'Greater than or equal 5' : 'Less than 5'
+        }
+    },
+    watch: {
+        counter(older, newer) {
+            setTimeout(() => {
+                this.counter = 0
+            }, 2000)
+        }
     },
     methods: {
         welcome: function() {
+            console.log('teste')
             return 'Welcome!'
         },
         instance: function() {
@@ -41,6 +60,12 @@ new Vue({
         },
         keyupAlert() {
             alert('Enter pressed')
+        },
+        computeExample() {
+            computeCounter ++
+        },
+        computeExample2() {
+            computeCounter2 += 2
         },
         // ex1
         doubledAge: function() {

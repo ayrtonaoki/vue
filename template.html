@@ -17,10 +17,23 @@
     <a v-on:click.prevent href="https://google.com">Google link (with prevent)</a>
     <p>Alert when press Enter: </p>
     <input type="text" v-on:keyup.enter="keyupAlert()">
+    <p> {{ twoWayBindExample }} </p>
+    <input type="text" v-bind:value="twoWayBindExample" v-on:input="twoWayBindExample = $event.target.value">
+    <p> {{ twoWayBindExample2 }} </p>
+    <input type="text" v-model="twoWayBindExample2">
+    <p>Counter (compute example): {{ computeCounter }} | {{ computeCounter2 }} </p>
+    <button v-on:click="computeCounter">+1</button>
+    <button v-on:click="computeCounter2">+2</button>
+    <p>Result: {{ resultComputeCounter }}</p>
+    <p> Sum with v-on sintax (v-on:click => @click): {{ counter }} </p>
+    <button @click="sum"> +1 </button>
+    <p>Input with bind sintax (v-bind:value => :value)</p>
+    <input type="text" :value="counter">
     <hr>
     <a href="template">Template</a>
     <a v-bind:href="ex1">Ex1</a>
     <a v-bind:href="ex2">Ex2</a>
+    <a v-bind:href="ex3">Ex3</a>
 </div>
 
 <script src="app.js"></script>
