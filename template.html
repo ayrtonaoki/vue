@@ -1,35 +1,70 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<link rel="stylesheet" href="style.css">
 
 <div id="app" v-on:mousemove="mouseMove">
     <h1> {{ title }} </h1>
     <h1> {{ title }} instance</h1>
     <p> {{ welcome() }} </p>
+    <hr>
+
     <div v-html="htmlTag"></div>
     <p> Sum: {{ counter }} </p>
     <button v-on:click="sum"> +1 </button>
     <p> Sum by 5: {{ counterBy }} </p>
     <button v-on:click="sumBy(5, $event)"> +5 </button>
+    <hr>
+
     <p>Mouse: {{ x }} & {{ y }} </p>
     <p v-on:mousemove="stopMouseMove">Stop mouse move by function</p>
     <p v-on:mousemove.stop>Stop mouse move by event handling</p>
-    <a v-on:click href="https://google.com">Google link</a>
-    <br>
+    <hr>
+
+    <a v-on:click href="https://google.com">Google link</a> <br>
     <a v-on:click.prevent href="https://google.com">Google link (with prevent)</a>
+    <hr>
+
     <p>Alert when press Enter: </p>
     <input type="text" v-on:keyup.enter="keyupAlert()">
+    <hr>
+
     <p> {{ twoWayBindExample }} </p>
     <input type="text" v-bind:value="twoWayBindExample" v-on:input="twoWayBindExample = $event.target.value">
     <p> {{ twoWayBindExample2 }} </p>
     <input type="text" v-model="twoWayBindExample2">
+    <hr>
+
     <p>Counter (compute example): {{ computeCounter }} | {{ computeCounter2 }} </p>
     <button v-on:click="computeCounter">+1</button>
     <button v-on:click="computeCounter2">+2</button>
     <p>Result: {{ resultComputeCounter }}</p>
+    <hr>
+
     <p> Sum with v-on sintax (v-on:click => @click): {{ counter }} </p>
     <button @click="sum"> +1 </button>
     <p>Input with bind sintax (v-bind:value => :value)</p>
     <input type="text" :value="counter">
     <hr>
+
+    <div id="div1">
+        <div class="div2" :class="[divClass, divClass2]"></div>
+        <div class="div2" :class="{color3: applyColor2, color2: !applyColor2}" @click="applyColor2 = !applyColor2">Click</div>
+        <div class="div2" :class="style"></div>
+    </div>
+    <input type="text" v-model="divClass">
+    <input type="text" v-model="divClass2">
+    <hr>
+
+    <div id="div1">
+        <div class="div2" :style="{backgroundColor: color, width: width, height: height}"></div>
+        <div class="div2" :style="myStyle"></div>
+        <div class="div2" :style="[myStyle, {height: height}]"></div>
+    </div>
+
+    Color: <input type="text" v-model="color">
+    Width: <input type="text" v-model="width">
+    Height: <input type="text" v-model="height">
+    <hr>
+
     <a href="template">Template</a>
     <a v-bind:href="ex1">Ex1</a>
     <a v-bind:href="ex2">Ex2</a>

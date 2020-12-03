@@ -1,0 +1,30 @@
+#div1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.div2 {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+
+.color1 {
+    background-color: red;
+}
+
+.color2 {
+    background-color: green;
+}
+
+.color3 {
+    background-color: blue;
+}
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+.scale {
+    transform: scale(0.5, 0.5);
+}

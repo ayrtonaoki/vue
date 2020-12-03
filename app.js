@@ -8,8 +8,14 @@ new Vue({
         counterBy: 0,
         x: 0,
         y: 0,
-        twoWayBindExample: "Two way data bind example",
-        twoWayBindExample2: "Two way data bind example with v-model",
+        twoWayBindExample: 'Two way data bind example',
+        twoWayBindExample2: 'Two way data bind example with v-model',
+        applyColor2: false,
+        divClass: 'color1',
+        divClass2: 'rotate',
+        color: 'yellow',
+        width: 100,
+        height: 100,
         // ex1
         ex1: './ex1.html',
         name: 'Ayrton',
@@ -28,6 +34,19 @@ new Vue({
     computed: {
         resultComputeCounter() {
             return this.computeCounter >= 5 ? 'Greater than or equal 5' : 'Less than 5'
+        },
+        style() {
+            return {
+                color2: this.applyColor2,
+                color3: !this.applyColor2
+            }
+        },
+        myStyle() {
+            return {
+                backgroundColor: this.color,
+                width: this.width,
+                height: this.height
+            }
         },
         // ex3
         resultEx3() {
