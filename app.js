@@ -22,18 +22,29 @@ new Vue({
         computeCounter: 0,
         computeCounter2: 0,
         // ex3
-        ex3: './ex3.html'
+        ex3: './ex3.html',
+        valueEx3: 0
     },
     computed: {
         resultComputeCounter() {
             return this.computeCounter >= 5 ? 'Greater than or equal 5' : 'Less than 5'
+        },
+        // ex3
+        resultEx3() {
+            return this.valueEx3 === 37 ? 'Same value' : 'Different value'
         }
     },
     watch: {
         counter(older, newer) {
             setTimeout(() => {
                 this.counter = 0
-            }, 2000)
+            }, 5000)
+        },
+        // ex3
+        resultEx3() {
+            setTimeout(() => {
+                this.valueEx3  = 0
+            }, 5000)
         }
     },
     methods: {
