@@ -29,7 +29,19 @@ new Vue({
         computeCounter2: 0,
         // ex3
         ex3: './ex3.html',
-        valueEx3: 0
+        valueEx3: 0,
+        // ex4
+        ex4: './ex4.html',
+        class1: 'mark',
+        danger: true,
+        class3: '',
+        class4: '',
+        color5: '',
+        style5: {
+            width: '100px',
+            height: '100px'
+        },
+        width: '0'
     },
     computed: {
         resultComputeCounter() {
@@ -111,6 +123,31 @@ new Vue({
         },
         getKeyValue(event) {
             this.value = event.target.value
+        },
+        //ex4
+        iniciarEfeito() {
+            setInterval(() => {
+                this.class1 = this.class1 == 'mark' ? 'shrink' : ' mark'
+            }, 1000)
+		},
+		iniciarProgresso() {
+
+        },
+        setDanger(event) {
+            if(event.target.value == 'true') {
+                this.danger.true
+            } else if (event.target.value == 'false') {
+                this.danger = false
+            }
+        },
+        loadProgressBar () {
+            let value = 0
+            const temp = setInterval(() => {
+                value += 5
+                this.width = `${value}%`
+                console.log(this.width)
+                if(value == 100) clearInterval(temp)
+            }, 50)
         }
     }
 })
