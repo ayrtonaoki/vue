@@ -16,6 +16,21 @@ new Vue({
         color: 'yellow',
         width: 100,
         height: 100,
+        user: 'Ayrton',
+        logged: false,
+        anonymous: false,
+        user2: 'Ayrton',
+        logged2: false,
+        anonymous2: false,
+        user3: 'Ayrton',
+        logged3: false,
+        anonymous3: false,
+        persons: [
+            { name: 'Ayrton', age: 24, gender: 'Male' },
+            { name: 'Jeovana', age: 26, gender: 'Female' },
+            { name: 'Gustavo', age: 25, gender: 'Male' }
+        ],
+        colors: ['red', 'green', 'blue', 'yellow'],
         // ex1
         ex1: './ex1.html',
         name: 'Ayrton',
@@ -41,7 +56,9 @@ new Vue({
             width: '100px',
             height: '100px'
         },
-        width: '0'
+        width: '0',
+        // ex5
+        ex5: './ex5.html'
     },
     computed: {
         resultComputeCounter() {

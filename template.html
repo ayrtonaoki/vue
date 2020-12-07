@@ -5,46 +5,46 @@
     <h1> {{ title }} </h1>
     <h1> {{ title }} instance</h1>
     <p> {{ welcome() }} </p>
-    <hr>
 
+    <hr>
     <div v-html="htmlTag"></div>
     <p> Sum: {{ counter }} </p>
     <button v-on:click="sum"> +1 </button>
     <p> Sum by 5: {{ counterBy }} </p>
     <button v-on:click="sumBy(5, $event)"> +5 </button>
-    <hr>
 
+    <hr>
     <p>Mouse: {{ x }} & {{ y }} </p>
     <p v-on:mousemove="stopMouseMove">Stop mouse move by function</p>
     <p v-on:mousemove.stop>Stop mouse move by event handling</p>
-    <hr>
 
+    <hr>
     <a v-on:click href="https://google.com">Google link</a> <br>
     <a v-on:click.prevent href="https://google.com">Google link (with prevent)</a>
-    <hr>
 
+    <hr>
     <p>Alert when press Enter: </p>
     <input type="text" v-on:keyup.enter="keyupAlert()">
-    <hr>
 
+    <hr>
     <p> {{ twoWayBindExample }} </p>
     <input type="text" v-bind:value="twoWayBindExample" v-on:input="twoWayBindExample = $event.target.value">
     <p> {{ twoWayBindExample2 }} </p>
     <input type="text" v-model="twoWayBindExample2">
-    <hr>
 
+    <hr>
     <p>Counter (compute example): {{ computeCounter }} | {{ computeCounter2 }} </p>
     <button v-on:click="computeCounter">+1</button>
     <button v-on:click="computeCounter2">+2</button>
     <p>Result: {{ resultComputeCounter }}</p>
-    <hr>
 
+    <hr>
     <p> Sum with v-on sintax (v-on:click => @click): {{ counter }} </p>
     <button @click="sum"> +1 </button>
     <p>Input with bind sintax (v-bind:value => :value)</p>
     <input type="text" :value="counter">
-    <hr>
 
+    <hr>
     <div id="div1">
         <div class="div2" :class="[divClass, divClass2]"></div>
         <div class="div2" :class="{color3: applyColor2, color2: !applyColor2}" @click="applyColor2 = !applyColor2">Click</div>
@@ -52,8 +52,8 @@
     </div>
     <input type="text" v-model="divClass">
     <input type="text" v-model="divClass2">
-    <hr>
 
+    <hr>
     <div id="div1">
         <div class="div2" :style="{backgroundColor: color, width: width, height: height}"></div>
         <div class="div2" :style="myStyle"></div>
@@ -63,13 +63,67 @@
     Color: <input type="text" v-model="color">
     Width: <input type="text" v-model="width">
     Height: <input type="text" v-model="height">
-    <hr>
 
+    <hr>
+    v-if
+    <p v-if="logged">User logged: {{ user }}</p>
+    <p v-else-if="anonymous">Anonymous mode</p>
+    <p v-else>No users logged</p>
+    Anonymous mode: <input type="checkbox" v-model="anonymous">
+    <button @click="logged = !logged"> {{ logged ? 'Logout' : 'Login' }} </button>
+
+    <hr>
+    v-if between template tag
+    <template v-if="logged2">
+        <p>User logged: {{ user2 }}</p>
+        <p>Profile: Admin</p>
+    </template>
+    <p v-else-if="anonymous2">Anonymous mode</p>
+    <p v-else>No users logged</p>
+    Anonymous mode: <input type="checkbox" v-model="anonymous2">
+    <button @click="logged2 = !logged2"> {{ logged2 ? 'Logout' : 'Login' }} </button>
+
+    <hr>
+    v-show
+    <p v-show="logged3">User logged: {{ user3 }}</p>
+    <p v-show="!logged3">No users logged</p>
+    <button @click="logged3 = !logged3"> {{ logged3 ? 'Logout' : 'Login' }} </button>
+
+    <hr>
+    <ul>
+        <li v-for="color in colors"> {{ color }} </li>
+    </ul>
+
+    <hr>
+    List with index
+    <ul>
+        <li v-for="(color, i) in colors"> {{ color }} {{ i }} </li>
+    </ul>
+
+    <hr>
+    List with div
+    <div v-for="(color, i) in colors">
+        <h1> {{ i }} </h1>
+        <p> {{ color }}</p>
+    </div>
+
+    <hr>
+    <div v-for="(person, i) in persons">
+        <div v-for="(attribute, value, i) in person">
+            <p> {{ i+1 }}) {{ attribute }}: {{ value }} </p>
+        </div><br>
+    </div>
+
+    <hr>
+    <div v-for="n in 10"> {{ n }} </div>
+
+    <hr>
     <a href="template">Template</a>
     <a v-bind:href="ex1">Ex1</a>
     <a v-bind:href="ex2">Ex2</a>
     <a v-bind:href="ex3">Ex3</a>
     <a v-bind:href="ex4">Ex4</a>
+    <a v-bind:href="ex5">Ex5</a>
 </div>
 
 <script src="app.js"></script>
