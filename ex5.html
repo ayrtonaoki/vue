@@ -1,0 +1,66 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!-- 1) Ligue o botão para alternar a exibição dos dois
+    parágrafos. Use ambos v-if e v-show e inspecione os elementos
+    para ver a diferença -->
+    <h2>#01</h2>
+    <div>
+        <button @click="textEx5 = !textEx5">Alternate</button>
+        <p v-if="textEx5">v-if 1</p>
+        <p v-else=>v-if 2</p>
+        <p v-show="textEx5">v-show 1</p>
+        <p v-show="!textEx5">v-show 2</p>
+    </div>
+
+    <!-- 2) Exiba em uma <ul> um array de elementos da sua escolha.
+    Imprima também o índice de cada elemento. -->
+    <h2>#02</h2>
+    <ul>
+        <li v-for="(team, i) in teamsEx5"> {{ i + 1 }} | {{ team }} </li>
+    </ul>
+
+    <!-- 3) Imprimir todos os pares de valor-chave do objeto a seguir:
+    {
+        titulo: 'O Senhor dos Anéis',
+        autor: 'J.R.R. Tolkiens',
+		volume: '3'
+	}
+    Imprima também o índice de cada item. -->
+    <h2>#03</h2>
+    <ul>
+        <li v-for="(value, attribute, i) in lotrEx5"> {{ i + 1 }} {{ attribute }}: {{ value }} </li>
+    </ul>
+
+    <!-- 4) Imprima o seguinte objeto (somente os valores) e
+    também crie um loop alinhado para o array:
+    {
+		id: 10,
+		nome: 'Maria',
+		notas: [7.67, 8.33, 6.98, 9.21]
+	}
+    (dica: use v-for e v-if na resolução) -->
+    <h2>#04</h2>
+    <ul>
+        <li v-for="(values) in studentEx5">
+            <template v-if="!Array.isArray(values)">
+                {{ values }}
+            </template>
+            <template v-else>
+                Notas:
+                <ul>
+                    <li v-for="sum in values"> {{ sum }} </li>
+                </ul>
+            </template>
+        </li>
+    </ul>
+
+    <hr>
+    <a v-bind:href="template">Template</a>
+    <a v-bind:href="ex1">Ex1</a>
+    <a v-bind:href="ex2">Ex2</a>
+    <a v-bind:href="ex3">Ex3</a>
+    <a v-bind:href="ex4">Ex4</a>
+    <a v-bind:href="ex5">Ex5</a>
+</div>
+<script src="app.js"></script>

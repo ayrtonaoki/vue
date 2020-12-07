@@ -58,7 +58,19 @@ new Vue({
         },
         width: '0',
         // ex5
-        ex5: './ex5.html'
+        ex5: './ex5.html',
+        textEx5: true,
+        teamsEx5: ['Saints', 'Buccaneers', 'Falcons', 'Panthers'],
+        lotrEx5: {
+            title: 'Lord Of The Rings',
+            autor: 'J.R.R. Tolkiens',
+            volume: '3'
+        },
+        studentEx5: {
+            id: 10,
+            nome: 'Maria',
+            notas: [7.67, 8.33, 6.98, 9.21]
+        }
     },
     computed: {
         resultComputeCounter() {
