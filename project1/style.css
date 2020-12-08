@@ -92,3 +92,31 @@ html {
 .surrender {
     background-color: lightgray;
 }
+
+.logs ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.logs ul li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: white;
+}
+
+.good {
+    background-color: dodgerblue;
+}
+
+.bad {
+    background-color: crimson;
+}

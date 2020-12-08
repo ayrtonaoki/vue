@@ -34,7 +34,13 @@
                 </template>
                 <button class="btn start" v-else @click="start">Start</button>
             </div>
-            <div class="panel logs" v-if="logs.length"></div>
+            <div class="panel logs" v-if="logs.length">
+                <ul>
+                    <li class="log" v-for="log in logs" :class="log.type">
+                        {{ log.text }}
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <script src="app.js"></script>
