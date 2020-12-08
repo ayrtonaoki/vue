@@ -21,7 +21,10 @@
                     <div> {{ enemyHp }}% </div>
                 </div>
             </div>
-            <div class="panel result"></div>
+            <div class="panel result" v-if="hasResult">
+                <div class="win" v-if="enemyHp == 0">You win!</div>
+                <div class="lose" v-else>You lose!</div>
+            </div>
             <div class="panel buttons"></div>
             <div class="panel logs"></div>
         </div>

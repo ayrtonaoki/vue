@@ -39,9 +39,24 @@ html {
     display: flex;
     justify-content: center;
     height: 100%;
-    background-color: green;
+    background-color: limegreen;
 }
 
 .life-bar .life.danger {
-    background-color: red;
+    background-color: crimson;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.result .win {
+    color: green;
+}
+
+.result .lose {
+    color: red
 }
