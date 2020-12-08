@@ -5,7 +5,22 @@
     </head>
     <body>
         <div id="app">
-            <div class="panel scores"></div>
+            <div class="panel scores">
+                <div class="score">
+                    <h1>Player</h1>
+                    <div class="life-bar">
+                        <div class="life" :class="{danger: playerHp < 25}" :style="{width: playerHp + '%'}"></div>
+                    </div>
+                    <div> {{ playerHp }}%  </div>
+                </div>
+                <div class="score">
+                    <h1>Enemy</h1>
+                    <div class="life-bar">
+                        <div class="life" :class="{danger: enemyHp < 25}" :style="{width: enemyHp + '%'}"></div>
+                    </div>
+                    <div> {{ enemyHp }}% </div>
+                </div>
+            </div>
             <div class="panel result"></div>
             <div class="panel buttons"></div>
             <div class="panel logs"></div>
