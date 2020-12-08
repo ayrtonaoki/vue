@@ -2,7 +2,8 @@ new Vue({
     el: "#app",
     data: {
         playerHp: 100,
-        enemyHp: 100
+        enemyHp: 0,
+        running: false
     },
     computed: {
         hasResult() {
@@ -10,7 +11,11 @@ new Vue({
         }
     },
     methods: {
-
+        start() {
+            this.running = true
+            this.playerHp = 100
+            this.enemyHp = 100
+        },
     },
     watch: {
 

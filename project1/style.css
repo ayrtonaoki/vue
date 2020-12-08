@@ -60,3 +60,35 @@ html {
 .result .lose {
     color: red
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin:  0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.start {
+    background-color: dodgerblue;
+}
+
+.attack {
+    background-color: crimson;
+}
+
+.special {
+    background-color: goldenrod;
+}
+
+.heal {
+    background-color: mediumseagreen;
+}
+
+.surrender {
+    background-color: lightgray;
+}
