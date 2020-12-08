@@ -29,12 +29,12 @@
                 <template v-if="running">
                     <button class="btn attack" @click="attack(false)">Attack</button>
                     <button class="btn special" @click="attack(true)">Special</button>
-                    <button class="btn heal">Heal</button>
+                    <button class="btn heal" @click="heal(5, 10)">Heal</button>
                     <button class="btn surrender" @click="running = false">Surrender</button>
                 </template>
                 <button class="btn start" v-else @click="start">Start</button>
             </div>
-            <div class="panel logs"></div>
+            <div class="panel logs" v-if="logs.length"></div>
         </div>
 
         <script src="app.js"></script>
