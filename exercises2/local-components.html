@@ -1,0 +1,46 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+    <counter1></counter1>
+    <counter1></counter1>
+    <counter1></counter1>
+</div>
+
+<hr>
+
+<div id="app2">
+    <counter2></counter2>
+    <counter2></counter2>
+    <counter2></counter2>
+</div>
+
+<script>
+    const counter = {
+        template: `
+            <div>
+                <span> {{ counter }} </span>
+                <button @click="counter++"> + </button>
+                <button @click="counter--"> - </button>
+            </div>
+        `,
+        data() {
+            return {
+                counter: 0
+            }
+        }
+    }
+
+    new Vue({
+        el: "#app1",
+        components: {
+            counter1: counter
+        }
+    })
+
+    new Vue({
+        el: "#app2",
+        components: {
+            counter2: counter
+        }
+    })
+</script>

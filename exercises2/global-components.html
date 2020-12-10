@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+    <hr>
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+</div>
+
+<script>
+    Vue.component('counter', {
+        template: `
+            <div>
+                <span> {{ counter }} </span>
+                <button @click="counter++"> + </button>
+                <button @click="counter--"> - </button>
+            </div>
+        `,
+        data() {
+            return {
+                counter: 0
+            }
+        }
+    })
+
+    new Vue({
+        el: "#app"
+    })
+</script>
